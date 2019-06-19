@@ -1,10 +1,11 @@
 const express = require("express");
 const dataStore = require("nedb");
 const fetch = require("node-fetch");
-require('dotenv').config();
+require("dotenv").config();
 
 const app = express();
-app.listen(5500, () => console.log("listening at 5500"));
+const PORT = process.env.port || 5500;
+app.listen(PORT, () => console.log(`listening at ${PORT}`));
 app.use(express.static("public"));
 app.use(express.json({ limit: "1mb" }));
 
@@ -28,8 +29,8 @@ app.post("/api", async (request, response) => {
   const data = request.body;
   const timestamp = Date.now();
   data.timestamp = timestamp;
-  const ip=await fetch("https://ipapi.co/json");
-  data.userDetails= await ip.json();
+  const ip = await fetch("https://ipapi.co/json");
+  data.userDetails = await ip.json();
   database.insert(data);
   response.json(data);
   console.log(
@@ -92,4 +93,3 @@ app.get("/time/:timezone", async (req, res) => {
   const json = await fetch_response.json();
   res.send(json);
 });
-
