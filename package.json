@@ -1,0 +1,22 @@
+{
+  "name": "lesson9",
+  "version": "1.0.0",
+  "description": "Location Based App",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon server.js"
+  },
+  "keywords": [
+    "server"
+  ],
+  "author": "Halil",
+  "license": "MIT",
+  "dependencies": {
+    "dotenv": "^8.0.0",
+    "express": "^4.17.1",
+    "nedb": "^1.8.0",
+    "node-fetch": "^2.6.0",
+    "nodemon": "^1.19.1"
+  }
+}

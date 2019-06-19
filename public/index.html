@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Bookmark App</title>
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" type="text/css" href="style.css" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/maptalks/dist/maptalks.css"
+    />
+    <script
+      type="text/javascript"
+      src="https://cdn.jsdelivr.net/npm/maptalks/dist/maptalks.min.js"
+    ></script>
+  </head>
+  <body>
+    <section id="topSection">
+      <h3 class="container">Location Based Bookmark App</h3>
+      <div id="map" style="width:100%;height: 55vh;"></div>
+    </section>
+    <br />
+    <section class="container" id="bottomSection">
+      <p id="latlon_paragraph">
+        <strong>Current Latitude:</strong>
+        <span id="latitude"></span>&deg;<br />
+        <strong>Current Longitude:</strong> <span id="longitude"></span>&deg;
+      </p>
+      <p id="geocode_paragraph">
+        <strong>The location : </strong> <span id="geocode_location"></span>
+        <br>
+        <strong>Time : </strong><span id="local_time"></span>
+      </p>
+      <p id="aQ_paragraph">
+        <strong>Air Quality Measurements : </strong>
+        <span id="aq_parameter"></span> is <span id="aq_value"></span>
+        <span id="aq_unit"></span> last read on <span id="aq_date"></span>
+      </p>
+      <p id="weather_paragraph">
+        <strong>The weather :</strong> <span id="weather_summary"></span><br />
+        <strong>Temperature :</strong> <span id="temperature"></span>
+      </p>
+      <br />
+      <button id="submit" class="btn btn-info">Submit Position</button>
+      <a href="/logs"><button class="btn btn-secondary">Show All</button></a>
+    </section>
+    <script src="client.js"></script>
+  </body>
+</html>
